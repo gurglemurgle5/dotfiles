@@ -1,0 +1,9 @@
+*
+!.gitignore
+!.config/
+!.config/hypr/
+!.config/hypr/*
+!.config/alacritty/
+!.config/alacritty/alacritty.toml
+!.config/waybar/
+!.config/waybar/*
