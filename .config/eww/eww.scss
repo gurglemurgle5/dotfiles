@@ -1,0 +1,53 @@
+@import "themes/blue.scss";
+
+* {
+  font-family: 'Volter (Goldfish)', monospace;
+  font-size: 18px;
+}
+
+.taskbar {
+  border-top: 4px solid $primary-color;
+  background-color: $background-color;
+}
+
+.windows {
+  /* margin-left: 8px; */
+  margin: 2px;
+}
+
+.window {
+  border: 4px solid $primary-color;
+  margin: 2px;
+  /* min-width: 280px; */
+  background-color: $background-color;
+  color: $primary-color;
+}
+
+.window label {
+  padding-left: 16px;
+  padding-top: 8px; /* Push the text down to match how it shows in OneShot */
+  padding-right: 16px;
+}
+
+.window.focused {
+  background-color: $primary-color;
+  color: $background-color;
+}
+
+.clock {
+  margin-right: 4px;
+  margin-left: 4px;
+  color: $primary-color;
+}
+
+.workspace {
+  border: 4px solid $primary-color;
+  color: $primary-color;
+  margin: 4px;
+  min-width: 32px;
+}
+
+button {
+  /* go away gnome styling */
+  all:unset;
+}

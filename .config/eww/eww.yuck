@@ -1,0 +1,68 @@
+(defpoll time :interval "1s"
+  :initial "initial-value"  ; optional, defaults to poll at startup
+  :run-while time-visible   ; optional, defaults to 'true'
+  `date "+%-I:%M %p"`
+)
+
+(deflisten windows `cd ~/Projects/eww_windows; cargo run`)
+
+(defwindow taskbar [screen]
+  :geometry (geometry
+    :x "100%"
+    :y "0px"
+    :width "100%"
+    :height "60px"
+    :anchor "bottom center"
+  )
+  :stacking "fg"
+  :exclusive true
+  (taskbar :monitor screen)
+)
+
+(
+  defwidget taskbar [monitor]
+  (box
+    :orientation "h"
+    :class "taskbar"
+    :space-evenly false
+    (windows :monitor monitor)
+    (clock)
+    (workspace :monitor monitor)
+  )
+)
+
+(defwidget windows [monitor]
+  (scroll
+    :hscroll true
+    :vscroll false
+    :hexpand true
+    (box
+      :class "windows"
+      :space-evenly false
+      (for window in `${windows[monitor]["windows"]}`
+        (window :title `${window["title"]}` :focused `${window["focused"]}` :address `${window["address"]}`)
+      )
+    )
+  )
+)
+
+(defwidget window [title focused address]
+  (button
+    :halign "start"
+    :active true
+    :onclick `hyprctl dispatch focuswindow 'address:0x${address}'`
+    (box
+      :halign "start"
+      :class `window ${focused ? "focused" : ""}`
+        (label :halign "start" :text title)
+    )
+  )
+)
+
+(defwidget clock []
+  (box :class "clock" (label :halign "end" :text time))
+)
+
+(defwidget workspace [monitor]
+  (label :class "workspace" :text `${windows[monitor]["workspace"]}`)
+)

@@ -4,6 +4,6 @@
 !.config/hypr/
 !.config/hypr/*
 !.config/alacritty/
-!.config/alacritty/alacritty.toml
-!.config/waybar/
-!.config/waybar/*
+!.config/alacritty/*
+!.config/eww/
+!.config/eww/**
