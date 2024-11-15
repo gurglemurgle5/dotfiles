@@ -1,8 +1,12 @@
 shell = "zsh"
 
 [window]
+dimensions = { columns = 80, lines = 24 }
 opacity = 0.5
 dynamic_padding = true
+
+[font]
+size = 10
 
 [colors.bright]
 black = "#444b6a"
