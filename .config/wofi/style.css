@@ -1,0 +1,72 @@
+* {
+  font-family: "Volter (Goldfish)";
+  font-size: 18px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#outer-box {
+  border: 4px solid #746be6;
+}
+
+#input {
+  border: none;
+  border-bottom: 4px solid #746be6;
+  color: #746be6;
+  caret-color: #746be6;
+  background-color: #000000;
+}
+
+#input image {
+  color: #746be6;
+}
+
+#input .placeholder {
+  color: #3A358C;
+}
+
+#scroll {
+  background-color: #000000;
+  color: #746be6;
+}
+
+#entry {
+  color: #746be6;
+  background-color: #000000;
+}
+
+#entry:selected {
+  background-color: #746be6;
+  color: #000000;
+  border: none;
+}
+
+#text {
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+#text:hover {
+  color: #746be6;
+}
+
+#text:selected {
+  color: #000000;
+  background-color: #746be6;
+}
+
+/* gtk why must you have an outline around selected things */
+*:selected {
+  outline: none;
+}
+
+/* this feels like cheating but /shrug */
+arrow {
+  color: #746be6;
+}
+
+:selected arrow {
+  color: #000000;
+}

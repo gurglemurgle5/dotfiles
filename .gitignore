@@ -7,3 +7,5 @@
 !.config/alacritty/*
 !.config/eww/
 !.config/eww/**
+!.config/wofi/
+!.config/wofi/**
